@@ -2,20 +2,57 @@ let lightTheme = "styles/light.css";
 let darkTheme = "styles/dark.css";
 var varNumber;
 var arcTrigo;
+
+var result = document.getElementById('result');
+
+const calculator = document.getElementById('calculator');
+
+calculator.addEventListener('keydown', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    if (e.key === 'Enter' || e.key === 'NumpadEnter')
+    {
+      result.value = eval(result.value);
+    }
+    if (e.key === 'Backspace') {
+        result.value = result.value.toString().slice(0, -1);
+    }
+    if (e.key === '0'
+        || e.key === '1'
+        || e.key === '2'
+        || e.key === '3'
+        || e.key === '4'
+        || e.key === '5'
+        || e.key === '6'
+        || e.key === '7'
+        || e.key === '8'
+        || e.key === '9'
+        || e.key === '-'
+        || e.key === '+'
+        || e.key === '*'
+        || e.key === '/')
+    {
+        liveScreen(e.key);
+    }
+    if (e.key === ',' || e.key === '.')
+    {
+        liveScreen('.');
+    }
+  });
 // Clears the screen on click of C button.
 function clearScreen() {
-  document.getElementById("result").value = "";
+    result.value = "";
 }
 // Displays entered value on screen.
 function liveScreen(value) {
-  document.getElementById("result").value += value;
+    result.value += value;
 }
 //apply trigo function.
 function trigo(func) {
   if (arcTrigo == "a") {
-    document.getElementById("result").value = "a"+func+"("+document.getElementById("result").value+")";
+      result.value = "a"+func+"("+result.value+")";
   } else {
-  document.getElementById("result").value = func+"("+document.getElementById("result").value+")";
+      result.value = func+"("+result.value+")";
   }
 }
 //calc cos
@@ -38,7 +75,7 @@ function acos(a) {
 function asin(a) {
   return Math.asin(a) * 180 / Math.PI;
 }
-//calc tan
+//calc atan
 function atan(a) {
   return Math.atan(a) * 180 / Math.PI;
 }
@@ -64,7 +101,7 @@ function second() {
 }
 //apply sqr.
 function sqr() {
-  document.getElementById("result").value = "sqrt("+document.getElementById("result").value+")";
+    result.value = "sqrt("+result.value+")";
 }
 function sqrt(a) {
   return Math.sqrt(a);
