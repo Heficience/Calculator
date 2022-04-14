@@ -5,16 +5,15 @@ var arcTrigo;
 
 var result = document.getElementById('result');
 
-const calculator = document.getElementById('calculator');
-
-calculator.addEventListener('keydown', (e) => {
+window.addEventListener('keydown', (e) => {
     e.stopPropagation();
     e.preventDefault();
     if (e.key === 'Enter' || e.key === 'NumpadEnter')
     {
       result.value = eval(result.value);
     }
-    if (e.key === 'Backspace') {
+    if (e.key === 'Backspace')
+    {
         result.value = result.value.toString().slice(0, -1);
     }
     if (e.key === '0'
@@ -38,7 +37,8 @@ calculator.addEventListener('keydown', (e) => {
     {
         liveScreen('.');
     }
-  });
+});
+
 // Clears the screen on click of C button.
 function clearScreen() {
     result.value = "";

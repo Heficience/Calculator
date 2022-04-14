@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet" />
 </head>
 
-<body>
+<body onkeydown="myKeyDown(e);">
   <div id="calculator" class="wrapper">
     <div class="container">
       <h1>Calculator</h1>
@@ -49,6 +49,7 @@
         <input type="button" value="," class="dot" onclick="liveScreen('.')" />
         <input type="button" value="=" onclick="result.value = eval(result.value)" />
       </div>
+      <p id="log"></p>
       <div class="bottom-buttons">
         <a href="https://github.com/heficience/Calculator"><i class="fab fa-github"></i>
           Source</a>
