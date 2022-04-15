@@ -16,6 +16,10 @@ window.addEventListener('keydown', (e) => {
     {
         result.value = result.value.toString().slice(0, -1);
     }
+    if (e.key === 'Delete')
+    {
+        clearScreen();
+    }
     if (e.key === '0'
         || e.key === '1'
         || e.key === '2'
