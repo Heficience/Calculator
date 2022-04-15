@@ -61,27 +61,27 @@ function trigo(func) {
 }
 //calc cos
 function cos(a) {
-  return Math.cos(a * Math.PI / 180);
+  return Math.cos(a * Math.PI / 180).toFixed();
 }
 //calc sin
 function sin(a) {
-  return Math.sin(a * Math.PI / 180);
+  return Math.sin(a * Math.PI / 180).toFixed();
 }
 //calc tan
 function tan(a) {
-  return Math.tan(a * Math.PI / 180);
+  return Math.tan(a * Math.PI / 180).toFixed();
 }
 //calc acos
 function acos(a) {
-  return Math.acos(a) * 180 / Math.PI;
+  return (Math.acos(a) * 180 / Math.PI).toFixed();
 }
 //calc asin
 function asin(a) {
-  return Math.asin(a) * 180 / Math.PI;
+  return (Math.asin(a) * 180 / Math.PI).toFixed();
 }
 //calc atan
 function atan(a) {
-  return Math.atan(a) * 180 / Math.PI;
+  return (Math.atan(a) * 180 / Math.PI).toFixed();
 }
 //arc trigo.
 function second() {
